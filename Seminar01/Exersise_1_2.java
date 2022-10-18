@@ -50,7 +50,7 @@ public class Exersise_1_2 {
                 if (myArray[right] > myArray[i] && right < size) {
                     max = right;
                 }    
-                if (myArray[left] > myArray[i] && myArray[left] > myArray[right] && left < size){
+                if (myArray[left] > myArray[max] && left < size){
                     max = left;
                 }
                 if (max != i){
@@ -67,6 +67,7 @@ public class Exersise_1_2 {
         }
         return myArray;
     }
+
 
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
