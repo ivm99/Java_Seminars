@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 
-public class Exersise_1_2 {
+public class Exercise_1_2 {
     public static int[] createArray () {
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите количество чисел в массиве: ");

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 //  Excersise_1_1
 
-public class Exersise_1_1 {
+public class Exercise_1_1 {
     public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in);
         System.out.printf("Введите число 'n' для получения треугольного числа: ");
