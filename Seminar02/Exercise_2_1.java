@@ -1,3 +1,4 @@
+// Написать программу, показывающую последовательность действий для игры “Ханойская башня”
 
 import java.util.Scanner;
 
@@ -16,18 +17,39 @@ public class Exercise_2_1 {
         System.out.printf("Исходное состояние Ханойской башни:");
         System.out.println();
         Print_R(x, y, z);
-        System.out.println();
         int count = 0;
         while (z[z.length-2] == 0) {
-            Step(x, y);
-            Step(x, z);
-            Step(y, z);
-            count ++;
+            if (x.length%2 == 0) {
+                Step(x, y);
+                count ++;
+                System.out.printf("Шаг %d" + "\n", count);
+                Print_R(x, y, z);
+                if (z[z.length-2] != 0) break;
+                Step(x, z);
+                count ++;
+                System.out.printf("Шаг %d" + "\n", count);
+                Print_R(x, y, z);
+                if (z[z.length-2] != 0) break;
+            } else {
+                Step(x, z);
+                count ++;
+                System.out.printf("Шаг %d" + "\n", count);
+                Print_R(x, y, z);
+                if (z[z.length-2] != 0) break;
+                Step(x, y);
+                count ++;
+                System.out.printf("Шаг %d" + "\n", count);
+                Print_R(x, y, z);
+                if (z[z.length-2] != 0) break;
+            }
+                Step(y, z);
+                count ++;
+                System.out.printf("Шаг %d" + "\n", count);
+                Print_R(x, y, z);
         }
         System.out.println("Конечное состояние Ханойской башни:");
         Print_R(x, y, z);
-        System.out.println();
-        System.out.printf("Задача решена за %d шаг(ов)",count);
+        System.out.printf("Задача решена за %d шаг(-а / -ов)",count);
     }
         
     public static void Swap(int [] x, int i, int [] y, int j) {
@@ -86,10 +108,11 @@ public static int [] CreateArray(String[] args) {
 
 public static void Print_R(int [] x, int [] y, int [] z) {
     String Str = "";
-        for (int i = 1; i < x.length-1; i++) {
-            Str = x[x.length - 1 - i] + "\t" + y[y.length - 1 - i] + "\t" + z[z.length - 1 - i] +"\n";
-            System.out.print(Str);
-        }
+    for (int i = 1; i < x.length-1; i++) {
+        Str = x[x.length - 1 - i] + "\t" + y[y.length - 1 - i] + "\t" + z[z.length - 1 - i] +"\n";
+        System.out.print(Str);
+    }
+    System.out.println();
 }
     
 }
