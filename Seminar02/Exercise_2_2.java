@@ -28,9 +28,15 @@ public class Exercise_2_2 {
         for (int index = 1; index < myArray.length; index++) {
             int temp = myArray[index];
             for (int i = index-1; i >= 0; i--) {
-                if (temp < myArray[i]) {
+                if (temp <= myArray[i]) {
                     myArray[i+1] = myArray[i];
-                    myArray[i] = temp;
+                    if (i == 0) {
+                        myArray[i] = temp;
+                    } else {
+                        if (myArray[i-1] < temp) {
+                            myArray[i] = temp;
+                        }
+                    }
                 }
             }
             System.out.printf("Шаг сортировки %d: %s\n", index, Arrays.toString(myArray));
