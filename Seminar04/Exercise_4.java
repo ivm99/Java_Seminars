@@ -1,3 +1,5 @@
+// Реализовать алгоритм быстрой сортировки
+
 package Seminar04;
 
 import java.util.Random;
