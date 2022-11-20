@@ -21,10 +21,10 @@ public class Exercise_3 {
                 { -1,  0, -1,  0,  0,  0,  0,  0, -1,  0,  0, -1 },
                 { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }
         };
-        int[] start = { 5, 3 };
+        int[] start = { 2, 8 };
         int[] st = start;
-        int[] finish1 = { 4, 8 };
-        int[] finish2 = { 9, 10 };
+        int[] finish1 = { 5, 9 };
+        int[] finish2 = { 9, 3 };
         int[][] points = new int[71][2];
         points[0] = start;
         System.out.println("Исходный лабиринт");
@@ -40,10 +40,10 @@ public class Exercise_3 {
         System.out.println();
         System.out.print("Заполненный лабиринт \n");
         DrawMap(map, st, finish1, finish2); 
-        System.out.print("кратчайший путь до Finish1: " + map[finish1[0]][finish1[1]] + " шагов\n");
+        System.out.print("кратчайший путь до Finish1: " + (map[finish1[0]][finish1[1]]-1) + " шагов\n");
         int [][] path1 = DrawPath(map, finish1, map[finish1[0]][finish1[1]]);
         DrawMap2(map, st, finish1, finish2, path1);
-        System.out.print("кратчайший путь до Finish2: " + map[finish2[0]][finish2[1]] + " шагов\n");
+        System.out.print("кратчайший путь до Finish2: " + (map[finish2[0]][finish2[1]]-1) + " шагов\n");
         int [][] path2 = DrawPath(map, finish2, map[finish2[0]][finish2[1]]);
         DrawMap2(map, st, finish1, finish2, path2);
     }
